@@ -1,0 +1,7 @@
+/eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/test/crab_Run2022G_part0/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass0/crab_Run2022G_part0/250105_084529/0000/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass1/crab_Run2022G_part1/250105_084538/0000/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass2/crab_Run2022G_part2/250105_084546/0000/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass3/crab_Run2022G_part3/250105_084555/0000/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass4/crab_Run2022G_part4/250105_084604/0000/
+# /eos/cms/store/group/phys_bphys/DiElectronX/sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass5/crab_Run2022G_part5/250105_084611/0000/
