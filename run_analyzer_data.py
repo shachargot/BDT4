@@ -8,11 +8,11 @@ import re
 if __name__ == '__main__':
     args = sys.argv
     if len(args) > 1:
-        output_path = args[1]
+        output_path = str(args[1])
     else:
         output_path = "output/"
     if len(args) > 2:  # mode = 0 (B+), 10 (B0)
-        mode = args[3]
+        mode = int(args[2])
     else:
         mode = 0
 
@@ -20,9 +20,9 @@ if __name__ == '__main__':
         os.makedirs(output_path)
 
     file = open("files.txt", "r")
-    outname = "outputTree"
-    idx = 0
     for line in file:
+        outname = "outputTree"
+        idx = 0
         if line[0] == '#':
             continue
         path = line.replace("\n", "")
@@ -35,7 +35,7 @@ if __name__ == '__main__':
             output_name = outname
             if not re.search('\.root', input):
                 continue 
-            text = re.search("([1-9]+)\.root", input)
+            text = re.search("([0-9]+)\.root", input)
             if text:
                 index = int(text.group(1))
             else:
