@@ -34,7 +34,6 @@
 #include "TTreeReaderValue.h"
 #include "TTreeReaderArray.h"
 #include "TMath.h"
-#include "ROOT/RDataFrame.hxx"
 // C++ tool
 #include <algorithm>
 #include <map>
@@ -78,20 +77,20 @@ void FillHistogram(TH1F* hist1_1, TH1F* hist1_2, TH1F* hist1_3, TH1F* hist1_4, T
 		}
 		TString outname = path + name + "_" + std::to_string(ifile) + ".root";
 		std::cout << "outname: " << outname << std::endl;
+
 		TFile* outputFile = new TFile(outname,"RECREATE");
-		
 		TTree* outputTree = tree->CloneTree(0);
 
 		Float_t output_BCand_quad_BDT = 0;
 		Float_t quad_BDT_scores[1000];
 		Int_t b_nBToKEE;
 		
-		outputTree->Branch("nBToKEE", &b_nBToKEE, "nBToKEE/I");
-		TBranch* branch = outputTree->Branch("BToKEE_quad_BDT", quad_BDT_scores, "BToKEE_quad_BDT[nBToKEE]/F");
+		// outputTree->Branch("nBToKEE", &b_nBToKEE, "nBToKEE/I");
+		outputTree->Branch("BToKEE_quad_BDT", quad_BDT_scores, "BToKEE_quad_BDT[nBToKEE]/F");
 
 		TTreeReader reader(tree);
-		
-                TTreeReaderValue<UInt_t> run(reader, "run");
+
+            	TTreeReaderValue<UInt_t> run(reader, "run");
 		TTreeReaderValue<UInt_t> luminosityBlock(reader, "luminosityBlock");
 		TTreeReaderValue<ULong64_t> event(reader, "event");
 		TTreeReaderValue<UInt_t> bunchCrossing(reader, "bunchCrossing");
@@ -248,7 +247,7 @@ void FillHistogram(TH1F* hist1_1, TH1F* hist1_2, TH1F* hist1_3, TH1F* hist1_4, T
     	for(Long64_t ievt = 0; ievt < numEntries; ++ievt) {
 		// for(Long64_t ievt = 0; ievt < 100; ++ievt) {
 		counter1++;
-		reader.SetEntry(ievt);
+		reader.SetLocalEntry(ievt);
         	if(ievt % 1000 == 0) {
         	    std::cout << "Processing " << static_cast<double>(ievt) / numEntries << std::endl;
         	}

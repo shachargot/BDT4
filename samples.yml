@@ -1,0 +1,52 @@
+samples:
+  samesign_Run2022F_part%d:
+    dataset: sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass%d/
+    isMC: False
+    parts:
+      - crab_Run2022F_part0/250105_084439/0000/ 
+      - crab_Run2022F_part0/250105_084439/0001/
+      - crab_Run2022F_part0/250105_084439/0002/
+      - crab_Run2022F_part1/250105_084447/0000/
+      - crab_Run2022F_part1/250105_084447/0001/
+      - crab_Run2022F_part1/250105_084447/0002/
+      - crab_Run2022F_part2/250105_084455/0000/
+      - crab_Run2022F_part2/250105_084455/0001/
+      - crab_Run2022F_part2/250105_084455/0002/
+      - crab_Run2022F_part3/250105_084503/0000/
+      - crab_Run2022F_part3/250105_084503/0001/
+      - crab_Run2022F_part3/250105_084503/0002/
+      - crab_Run2022F_part4/250105_084511/0000/
+      - crab_Run2022F_part4/250105_084511/0001/
+      - crab_Run2022F_part4/250105_084511/0002/
+      - crab_Run2022F_part5/250105_084519/0000/ 
+      - crab_Run2022F_part5/250105_084519/0001/
+      - crab_Run2022F_part5/250105_084519/0002/
+  samesign_Run2022G_part%d:
+    dataset: sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass%d/ 
+    isMC: False
+    parts:
+      - crab_Run2022G_part0/250105_084529/0000/ 
+      - crab_Run2022G_part1/250105_084538/0000/ 
+      - crab_Run2022G_part2/250105_084546/0000/ 
+      - crab_Run2022G_part3/250105_084555/0000/
+      - crab_Run2022G_part4/250105_084604/0000/
+      - crab_Run2022G_part5/250105_084611/0000/
+  BuToKEE_postEE:
+    dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_postEE/240502_043805/0000/
+    isMC: True
+  BuToKEE_preEE:
+    dataset: production/samples/BParkingNANO_2023Mar10/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_preEE/230310_173544/0000/
+    isMC: True
+  BuToKstarEE_postEE:
+    dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_postEE/240502_043805/0000/ 
+    isMC: True
+  BuToKstarEE_preEE:
+    dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_preEE/240502_043754/0000/
+    isMC: True
+  BdToK0starEE_postEE: 
+    dataset: production/samples/BParkingNANO_2024May02/BdToK0starEE_K0starToKPi_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BdToK0starEE_v1_postEE/240502_043902/0000/ 
+    isMC: True
+  BdToK0starEE_preEE:
+    dataset: production/samples/BParkingNANO_2024May02/BdToK0starEE_K0starToKPi_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BdToK0starEE_v1_preEE/240502_043853/0000/
+    isMC: True
+
