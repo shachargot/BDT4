@@ -1,4 +1,14 @@
 samples:
+  Run2022G_part%d:
+    dataset: sgottlie/BParkingNANO/data/ParkingDoubleElectronLowMass%d/
+    isMC: False
+    parts:
+      - crab_Run2022G_part0/250408_163037/0000/
+      - crab_Run2022G_part1/250408_163044/0000/ 
+      - crab_Run2022G_part2/250408_163050/0000/   
+      - crab_Run2022G_part3/250408_163056/0000/
+      - crab_Run2022G_part4/250408_163102/0000/
+      - crab_Run2022G_part5/250408_163108/0000/
   samesign_Run2022F_part%d:
     dataset: sgottlie/BParkingNANO/samesign/ParkingDoubleElectronLowMass%d/
     isMC: False
@@ -35,7 +45,7 @@ samples:
     dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_postEE/240502_043805/0000/
     isMC: True
   BuToKEE_preEE:
-    dataset: production/samples/BParkingNANO_2023Mar10/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_preEE/230310_173544/0000/
+    dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_preEE/240502_043754/0000/
     isMC: True
   BuToKstarEE_postEE:
     dataset: production/samples/BParkingNANO_2024May02/BuToKEE_SoftQCD_TuneCP5_13p6TeV_pythia8-evtgen/crab_BuToKee_v1_postEE/240502_043805/0000/ 

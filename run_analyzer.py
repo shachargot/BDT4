@@ -16,7 +16,7 @@ if __name__ == '__main__':
     parser.add_argument('-m', '--mode', default='0', help = 'Mode = 0 (Bu) or 10 (Bd)')
     args = parser.parse_args()
     
-    input_path = '/eos/cms/store/group/phys_bphys/DiElectronX/'
+    directory = '/eos/cms/store/group/phys_bphys/DiElectronX/'
     output_path = args.output
     mode = int(args.mode) # (MC only, not used currently)
     
@@ -28,7 +28,8 @@ if __name__ == '__main__':
         for sample, info in doc['samples'].items():
             parts = info['parts'] if 'parts' in info else [None] 
             for part in parts:
-                part_num = re.search('part([0-9]+)', part)
+                if part is not None:
+                    part_num = re.search('part([0-9]+)', part)
                 sample_name = sample.replace('%d',str(part_num.group(1))) if part_num is not None else sample
 
                 if not fnmatch(sample_name, args.filter): continue
@@ -37,15 +38,11 @@ if __name__ == '__main__':
                 idx = 0
                 
                 isMC = info['isMC']
-                input_path += info['dataset'].replace('%d',str(part_num.group(1))) + "/" + part \
+                input_path = directory + info['dataset'].replace('%d',str(part_num.group(1))) + "/" + part \
                                    if part is not None else \
-                                      info['dataset'] 
+                                      directory + info['dataset'] 
 
                 data_list = os.listdir(input_path)
-                # text = re.search('crab_(.+?)/', input_path)  # Extract run ID
-                # if text:
-                #    run = text.group(1)
-                #    outname = run + "_" + outname
                 for input in data_list:
                     output_name = "outputTree_" + sample_name
                     if not re.search('\.root', input):  # Skip non-ROOT files
@@ -59,7 +56,5 @@ if __name__ == '__main__':
                     # if os.path.isfile(output_path + "/" + output_name + "_" + str(index) + ".root"):  # Skip files already in place
                     #    continue
                     print(input_path + input)
-                    # if isMC:
-                    #    os.system('root -b -q \'src/analyzer_MC_131_triplets.C+("%s", "%s", "%s", %d, %d)\'' % (input_path + input, output_path, output_name, index, mode))
-                    # else: 
-                    os.system('root -b -q \'src/analyzer_Data_131_triplets.C+("%s", "%s", "%s", %d, %d)\'' % (input_path + input, output_path, output_name, index, mode))
+                    os.system('root -b -q \'src/analyzer_Data_131_triplets.C+("%s", "%s", "%s", %d, %d)\'' % (input_path + input, output_path, output_name, index, mode))  # MC analyzer not used currently
+ 
